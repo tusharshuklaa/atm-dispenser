@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ATM Money Dispenser</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="container">
+    <div class="left-pane">
+      <h2>Welcome to ATM</h2>
+      <label for="amount">Enter the amount</label>
+      <input type="number" id="amount" placeholder="Enter amount to withdraw" />
+      <span id="error"></span>
+      <button class="btn" id="getMoney">Get Money</button>
+    </div>
+    <div class="right-pane">
+      <table id="table"></table>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
