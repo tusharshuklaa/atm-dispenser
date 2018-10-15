@@ -64,7 +64,6 @@ const ATM = {
     const amount = _getAmount();
     if (amount) {
       const processedObj = _processAmount(amount);
-      console.log(processedObj);
       const ui = _getUi(processedObj);
       $(dom.table).innerHTML = ui;
     }
@@ -91,6 +90,7 @@ const ATM = {
       return acc;
     }, {});
 
+    // Recursive function to add count value against each denomination
     function process(){
       if (ad.length > 0 && amt > 0) {
         const max = parseInt(ad.splice(ad.indexOf(Math.max(ad)), 1)[0]);
@@ -122,8 +122,10 @@ const ATM = {
         note = count < 2 ? "note" : "notes",
         cell = `<td>${count} ${note} of Rs ${k}</td>`,
         item = idx % 2 !== 0 ? `<tr>${cell}` : `${cell}</tr>`;
-        totalNotes = totalNotes + count;
+
+      totalNotes = totalNotes + count;
       ui = ui + item;
+      
       return ui;
     }, ""),
     foot = `<tfoot><tr><td colspan="2">Total notes dispensed: ${totalNotes}</td></tr></tfoot>`;
