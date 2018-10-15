@@ -51,6 +51,13 @@ const ATM = {
 
   const initHandlers = function () {
     $(dom.getMoney).addEventListener("click", _dispense);
+    $(dom.amount).addEventListener("keyup", function(e){
+      const key = e.which || e.keyCode;
+      if(key === 13) {
+        _dispense();
+        this.blur();
+      }
+    });
   };
 
   const _dispense = function () {
